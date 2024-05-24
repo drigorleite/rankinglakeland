@@ -1,0 +1,122 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0 0 60px; /* Bottom padding to ensure content doesn't overlap with the fixed footer */
+    background-color: #f0f4f8;
+    color: #333;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased; /* Smoother font rendering */
+}
+
+header {
+    background: linear-gradient(to right, #0056b3, #0091ea);
+    color: #fff;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12); /* Enhanced shadow for depth */
+    border-bottom: 4px solid #003366;
+}
+
+.special-awards {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px; /* Espaçamento entre os blocos */
+    padding: 20px;
+    margin: 20px auto 40px; /* Margem aumentada para separar da tabela */
+    background-color: transparent;
+}
+
+.special-awards .award {
+    flex: 1; /* Faz com que todos os elementos award ocupem a mesma quantidade de espaço */
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px; /* Cantos arredondados */
+    color: #fff;
+    background: #79d2ff; /* Cor uniforme para todos os prêmios */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Sombra mais pronunciada */
+    margin: 0 10px; /* Espaçamento lateral */
+}
+
+
+h1 {
+    margin: 0;
+    font-size: 28px; /* Slightly larger for emphasis */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+table {
+    width: 95%; /* Ajustado para preencher a tela */
+    margin: 20px auto; /* Centralização melhorada */
+    border-collapse: collapse;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Sombra sutil para dar profundidade */
+    background-color: #fff; /* Fundo branco para contraste */
+    border-radius: 8px; /* Canto arredondado da tabela */
+    overflow: hidden; /* Para aplicar o border-radius */
+    margin-bottom: 40px; /* Margem inferior para separar do rodapé */
+}
+
+th, td {
+    padding: 15px 20px; /* Padding para espaçamento interno */
+    text-align: left; /* Alinhamento à esquerda para os textos */
+    border-bottom: 1px solid #ddd; /* Borda sutil para separar as linhas */
+    transition: background-color 0.3s ease; /* Transição suave para hover */
+}
+
+th {
+    background-color: #f8f8f8; /* Cor de fundo suave para cabeçalhos de tabela */
+    color: #333; /* Cor do texto para boa leitura */
+    font-size: 16px; /* Tamanho de fonte adequado para cabeçalhos */
+    text-transform: uppercase; /* Texto em maiúsculas para cabeçalhos */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+    border-top-left-radius: 8px; /* Canto arredondado do cabeçalho */
+    border-top-right-radius: 8px; /* Canto arredondado do cabeçalho */
+}
+
+tbody tr {
+    border-radius: 8px; /* Canto arredondado das linhas da tabela */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #e6f7ff; /* Azul claro */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f0fbff; /* Azul ainda mais claro */
+}
+
+tbody tr:hover {
+    background-color: #d0efff; /* Cor de hover para destacar a linha sob o mouse */
+}
+
+td {
+    font-size: 14px; /* Tamanho de fonte para o corpo da tabela */
+    color: #555; /* Cor do texto para o corpo da tabela */
+}
+
+
+
+
+footer {
+    text-align: center;
+    padding: 12px 0;
+    background: linear-gradient(to right, #0056b3, #0091ea);
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    border-top: 5px solid #003366; /* Thicker border for a stronger visual base */
+}
+
+@media screen and (max-width: 600px) {
+    table, th, td {
+        width: 100%;
+        padding: 12px 8px; /* Reduced padding for smaller screens */
+    }
+    header, footer {
+        padding: 15px 10px;
+    }
+    body {
+        padding-bottom: 80px; /* Increase space at the bottom on small screens */
+    }
+}
