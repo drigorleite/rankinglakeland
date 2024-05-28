@@ -2,19 +2,20 @@ body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
     padding: 0 0 60px; /* Bottom padding to ensure content doesn't overlap with the fixed footer */
-    background-color: #f0f4f8;
+    background-color: #ececec;
     color: #333;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased; /* Smoother font rendering */
 }
 
 header {
-    background: linear-gradient(to right, #0056b3, #0091ea);
+    background: linear-gradient(to right, #019e6a, #003455);
     color: #fff;
     padding: 15px 20px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.12); /* Enhanced shadow for depth */
-    border-bottom: 4px solid #003366;
+    box-shadow: 0 4px 8px rgba(99, 94, 94, 0.12); /* Enhanced shadow for depth */
+    border-bottom: 4px solid #ececec;
+    width: 100%;
 }
 
 .special-awards {
@@ -24,6 +25,7 @@ header {
     padding: 20px;
     margin: 20px auto 40px; /* Margem aumentada para separar da tabela */
     background-color: transparent;
+    max-width: 90%;
 }
 
 .special-awards .award {
@@ -32,7 +34,7 @@ header {
     padding: 20px;
     border-radius: 12px; /* Cantos arredondados */
     color: #fff;
-    background: #79d2ff; /* Cor uniforme para todos os prêmios */
+    background: #036a77; /* Cor uniforme para todos os prêmios */
     box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Sombra mais pronunciada */
     margin: 0 10px; /* Espaçamento lateral */
 }
@@ -45,54 +47,130 @@ h1 {
     letter-spacing: 2px;
 }
 
+.search {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 5%;
+    line-height: 28px;
+    text-align: center;
+}
+
+input {
+    font-family: inherit;
+    font-size: inherit;
+    background-color: #f4f2f2;
+    border: none;
+    color: #646464;
+    padding: 0.7rem 1rem;
+    border-radius: 30px;
+    width: 12rem;
+    transition: all ease-in-out .5s;
+    margin-right: -2rem;
+}
+
+input:focus, input:hover {
+    box-shadow: 0 0 1em #00000013;
+}
+
+input:focus {
+    outline: none;
+    background-color: #f0eeee;
+}
+
+input:focus + .search_button {
+    background-color: #f4f2f2;
+}
+
+.search_button {
+    border: none;
+    background-color: #f4f2f2;
+    margin-top: .1em;
+}
+
+.search_button:hover {
+    cursor: pointer;
+}
+
+.icon {
+    height: 1.3em;
+
+    fill: #030e6d;
+
+}
+
+.highlight {
+    background-color: #0b5980;
+    font-weight: bold;
+}
+
+
+
 table {
-    width: 95%; /* Ajustado para preencher a tela */
-    margin: 20px auto; /* Centralização melhorada */
+    width: 90%;
+    margin: 20px auto;
     border-collapse: collapse;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Sombra sutil para dar profundidade */
-    background-color: #fff; /* Fundo branco para contraste */
-    border-radius: 8px; /* Canto arredondado da tabela */
-    overflow: hidden; /* Para aplicar o border-radius */
-    margin-bottom: 40px; /* Margem inferior para separar do rodapé */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    background-color: #fff;
+    border-radius: 12px; /* Canto arredondado mais suave */
+    overflow: hidden;
+    margin-bottom: 40px;
+    border: 1px solid #ddd; /* Adiciona uma borda sutil */
 }
 
 th, td {
-    padding: 15px 20px; /* Padding para espaçamento interno */
-    text-align: left; /* Alinhamento à esquerda para os textos */
-    border-bottom: 1px solid #ddd; /* Borda sutil para separar as linhas */
-    transition: background-color 0.3s ease; /* Transição suave para hover */
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 th {
-    background-color: #f8f8f8; /* Cor de fundo suave para cabeçalhos de tabela */
-    color: #333; /* Cor do texto para boa leitura */
-    font-size: 16px; /* Tamanho de fonte adequado para cabeçalhos */
-    text-transform: uppercase; /* Texto em maiúsculas para cabeçalhos */
-    letter-spacing: 1px; /* Espaçamento entre letras */
-    border-top-left-radius: 8px; /* Canto arredondado do cabeçalho */
-    border-top-right-radius: 8px; /* Canto arredondado do cabeçalho */
+    background-color: #f1f4f9; /* Cor de fundo mais clara para cabeçalhos */
+    color: #333;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    font-weight: 600; /* Texto mais forte nos cabeçalhos */
 }
 
 tbody tr {
-    border-radius: 8px; /* Canto arredondado das linhas da tabela */
+    border-radius: 12px;
 }
 
 tbody tr:nth-child(odd) {
-    background-color: #e6f7ff; /* Azul claro */
+    background-color: #e6f7ff;
 }
 
 tbody tr:nth-child(even) {
-    background-color: #f0fbff; /* Azul ainda mais claro */
+    background-color: #f0fbff;
 }
 
 tbody tr:hover {
-    background-color: #d0efff; /* Cor de hover para destacar a linha sob o mouse */
+    background-color: #d0efff;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1); /* Sombra adicional ao passar o mouse */
+    transform: scale(1.01); /* Leve aumento de escala para dar efeito de elevação */
+}
+
+tbody tr:hover td:nth-child(2) {
+    transform: scale(1.1);
+    font-weight: bold;
+    color: #0056b3; /* Cor do texto alterada para maior contraste */
 }
 
 td {
-    font-size: 14px; /* Tamanho de fonte para o corpo da tabela */
-    color: #555; /* Cor do texto para o corpo da tabela */
+    font-size: 14px;
+    color: #555;
+    transition: transform 0.3s ease, color 0.3s ease;
+    background-color: inherit; /* Mantém a cor de fundo herdada */
 }
+
+td:hover {
+    color: #000; /* Cor do texto mais escura ao passar o mouse */
+}
+
 
 
 
@@ -100,12 +178,12 @@ td {
 footer {
     text-align: center;
     padding: 12px 0;
-    background: linear-gradient(to right, #0056b3, #0091ea);
+    background: linear-gradient(to right, #019e6a, #003455);
     color: white;
     position: fixed;
     width: 100%;
     bottom: 0;
-    border-top: 5px solid #003366; /* Thicker border for a stronger visual base */
+    border-top: 5px solid #ececec; /* Thicker border for a stronger visual base */
 }
 
 @media screen and (max-width: 600px) {
@@ -120,3 +198,4 @@ footer {
         padding-bottom: 80px; /* Increase space at the bottom on small screens */
     }
 }
+
