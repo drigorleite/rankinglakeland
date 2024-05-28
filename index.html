@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tennis Ranking</title>
+    <title>Lakeland Ranking</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <header>
         <h1>Lakeland Ranking</h1>
     </header>
-    <main>
 
+    <main>
         <div class="special-awards">        
             <div class="award" id="topPlayer">
                 <h3>TOP 1 Player</h3>
@@ -25,7 +26,32 @@
                 <h3>Most Points Monthly</h3>
                 <h1 id="mostPointsPlayer">[Player with Most Points This Month]</h1>
             </div>
-        </div>    
+        </div>
+
+
+
+        <div class="search">
+            <input type="text" id="search-bar" placeholder="Type your Name">
+            <button onclick="search()" class="search_button">
+                <svg class="icon"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M19.0711 19.0711C22.9763 15.1658 22.9763 8.83418 19.0711 4.92893C15.1658 1.02369 8.83418 1.02369 4.92893 4.92893C1.02369 8.83418 1.02369 15.1658 4.92893 19.0711C8.83418 22.9763 15.1658 22.9763 19.0711 19.0711ZM19.9426 11.0407C19.7364 9.32374 18.9745 7.6608 17.6569 6.34315C16.3343 5.0206 14.6639 4.25792 12.9402 4.0551L12.93 4.11139C12.1086 8.58308 8.58304 12.1086 4.11136 12.93L4.05511 12.9402C4.25793 14.6639 5.02061 16.3343 6.34315 17.6569C7.66079 18.9745 9.32373 19.7364 11.0407 19.9426C11.0449 19.9191 11.0491 19.8956 11.0534 19.8721C11.8748 15.4004 15.4003 11.8748 19.872 11.0534C19.8955 11.0491 19.9191 11.0449 19.9426 11.0407ZM19.872 13.4292V13.0951C16.5073 13.8586 13.8586 16.5073 13.095 19.8721H13.429C14.9777 19.5924 16.4598 18.8539 17.6569 17.6569C18.8539 16.4598 19.5923 14.9778 19.872 13.4292ZM4.11136 10.8884L4.11136 10.666C4.37766 9.08301 5.12159 7.5647 6.34315 6.34315C7.56465 5.12165 9.08288 4.37773 10.6658 4.11139L10.8883 4.11139C10.1248 7.47615 7.47612 10.1249 4.11136 10.8884Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
+        </div>
+        <div id="search-results"></div>
+
+
 
         <table id="rankingTable">
             <thead>
@@ -42,71 +68,79 @@
             </thead>
             <tbody>
             </tr>
-            <tr><td>1</td><td>Coates, Landon</td><td>40</td><td>3</td><td>0</td><td>18</td><td>7</td><td>11</td></tr>
-            <tr><td>2</td><td>Guenther, Gabby</td><td>33</td><td>1</td><td>0</td><td>4</td><td>1</td><td>3</td></tr>
-            <tr><td>3</td><td>Coates, Spencer</td><td>33</td><td>2</td><td>1</td><td>13</td><td>4</td><td>9</td></tr>
-            <tr><td>4</td><td>Blumentritt, Colin</td><td>30</td><td>1</td><td>0</td><td>6</td><td>0</td><td>6</td></tr>
-            <tr><td>5</td><td>Son, Euji</td><td>29</td><td>2</td><td>2</td><td>15</td><td>17</td><td>-2</td></tr>
-            <tr><td>6</td><td>Blumentritt, Luke</td><td>27</td><td>1</td><td>4</td><td>17</td><td>27</td><td>-10</td></tr>
-            <tr><td>7</td><td>Lippert, Quinn</td><td>26</td><td>2</td><td>3</td><td>16</td><td>23</td><td>-7</td></tr>
-            <tr><td>8</td><td>Ashfeld, Jaxson</td><td>26</td><td>3</td><td>0</td><td>18</td><td>10</td><td>8</td></tr>
-            <tr><td>9</td><td>Chen, Chris</td><td>29</td><td>1</td><td>0</td><td>6</td><td>3</td><td>3</td></tr>
-            <tr><td>10</td><td>Westberry, Will</td><td>24</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-            <tr><td>11</td><td>Kennedy, Cormac</td><td>24</td><td>2</td><td>0</td><td>12</td><td>4</td><td>8</td></tr>
-            <tr><td>12</td><td>Zhao, Isabelle</td><td>22</td><td>4</td><td>0</td><td>24</td><td>9</td><td>15</td></tr>
-            <tr><td>13</td><td>Yu, Ella</td><td>22</td><td>3</td><td>0</td><td>18</td><td>2</td><td>16</td></tr>
-            <tr><td>14</td><td>Wu, Olivia</td><td>22</td><td>1</td><td>1</td><td>10</td><td>7</td><td>3</td></tr>
-            <tr><td>15</td><td>Westberry, Jake</td><td>19</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-            <tr><td>16</td><td>Striegel, Harrison</td><td>18</td><td>0</td><td>1</td><td>4</td><td>6</td><td>-2</td></tr>
-            <tr><td>17</td><td>Jin, Johan</td><td>18</td><td>2</td><td>1</td><td>14</td><td>7</td><td>7</td></tr>
-            <tr><td>18</td><td>Hu, Aileen</td><td>18</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-            <tr><td>19</td><td>Brant, Lanie</td><td>17</td><td>1</td><td>2</td><td>7</td><td>16</td><td>-9</td></tr>
-            <tr><td>20</td><td>Yergler, Libby</td><td>16</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-            <tr><td>21</td><td>Brooke, Ivette</td><td>16</td><td>1</td><td>2</td><td>9</td><td>12</td><td>-3</td></tr>
-            <tr><td>22</td><td>Ashfeld, Josie</td><td>16</td><td>2</td><td>2</td><td>14</td><td>13</td><td>1</td></tr>
-            <tr><td>23</td><td>Wang, Xiaohe</td><td>15</td><td>2</td><td>2</td><td>15</td><td>14</td><td>1</td></tr>
-            <tr><td>24</td><td>Zhang, Aaron</td><td>14</td><td>2</td><td>1</td><td>13</td><td>14</td><td>-1</td></tr>
-            <tr><td>25</td><td>Ferreira, Noe</td><td>14</td><td>1</td><td>0</td><td>6</td><td>2</td><td>4</td></tr>
-            <tr><td>26</td><td>Marazita, Ella</td><td>12</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-            <tr><td>27</td><td>Lippert, Landen</td><td>12</td><td>1</td><td>0</td><td>6</td><td>3</td><td>3</td></tr>
-            <tr><td>28</td><td>Wickey, Teagan</td><td>11</td><td>1</td><td>0</td><td>4</td><td>0</td><td>4</td></tr>
-            <tr><td>29</td><td>Michaels, Ella</td><td>10</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-            <tr><td>30</td><td>Kirleis, Kenny</td><td>10</td><td>0</td><td>4</td><td>8</td><td>22</td><td>-14</td></tr>
-            <tr><td>31</td><td>Haberland, Hudson</td><td>9</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-            <tr><td>32</td><td>Gao, Norah</td><td>9</td><td>1</td><td>1</td><td>10</td><td>7</td><td>3</td></tr>
-            <tr><td>33</td><td>Zhao, Annabelle</td><td>8</td><td>1</td><td>2</td><td>9</td><td>13</td><td>-4</td></tr>
-            <tr><td>34</td><td>Wei, Emma</td><td>8</td><td>2</td><td>1</td><td>14</td><td>10</td><td>4</td></tr>
-            <tr><td>35</td><td>Brady, Ben</td><td>8</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-            <tr><td>36</td><td>Ewing, Maya</td><td>6</td><td>0</td><td>1</td><td>0</td><td>6</td><td>-6</td></tr>
-            <tr><td>37</td><td>Palacios, Andrea</td><td>5</td><td>0</td><td>3</td><td>4</td><td>18</td><td>-14</td></tr>
-            <tr><td>38</td><td>Narisetty, Vihaan</td><td>4</td><td>1</td><td>0</td><td>6</td><td>0</td><td>6</td></tr>
-            <tr><td>39</td><td>G, Blake</td><td>4</td><td>1</td><td>1</td><td>7</td><td>6</td><td>1</td></tr>
-            <tr><td>40</td><td>Zhao, Kaiyi</td><td>4</td><td>0</td><td>1</td><td>3</td><td>6</td><td>-3</td></tr>
-            <tr><td>41</td><td>Zhang, Julie</td><td>4</td><td>1</td><td>1</td><td>7</td><td>8</td><td>-1</td></tr>
-            <tr><td>42</td><td>So, Austin</td><td>4</td><td>1</td><td>0</td><td>6</td><td>4</td><td>2</td></tr>
-            <tr><td>43</td><td>Picking, Ben</td><td>4</td><td>1</td><td>2</td><td>11</td><td>14</td><td>-3</td></tr>
-            <tr><td>44</td><td>Davis, Luke</td><td>4</td><td>1</td><td>2</td><td>6</td><td>12</td><td>-6</td></tr>
-            <tr><td>45</td><td>Betz, Jack</td><td>4</td><td>1</td><td>2</td><td>8</td><td>17</td><td>-9</td></tr>
-            <tr><td>46</td><td>Samardzich, Luke</td><td>0</td><td>0</td><td>1</td><td>1</td><td>6</td><td>-5</td></tr>
-            <tr><td>47</td><td>Robert</td><td>0</td><td>0</td><td>1</td><td>4</td><td>6</td><td>-2</td></tr>
-            <tr><td>48</td><td>Zhang, Jeffery</td><td>0</td><td>0</td><td>1</td><td>0</td><td>6</td><td>-6</td></tr>
-            <tr><td>49</td><td>Washington, Tristan</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-            <tr><td>50</td><td>Shim, Noah</td><td>0</td><td>0</td><td>1</td><td>4</td><td>6</td><td>-2</td></tr>
-            <tr><td>51</td><td>Serge, Genevieve</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-            <tr><td>52</td><td>Lin, Yuxuan</td><td>0</td><td>0</td><td>1</td><td>3</td><td>6</td><td>-3</td></tr>
-            <tr><td>53</td><td>Gerber, Nina</td><td>0</td><td>0</td><td>2</td><td>6</td><td>12</td><td>-6</td></tr>
-            <tr><td>54</td><td>Gerber, Meira</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-            <tr><td>55</td><td>Eskander, Anna</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-            <tr><td>56</td><td>Chung, Nathan</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-            <tr><td>57</td><td>Chung, Charlotte</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-            <tr><td>58</td><td>An, Misha</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr class="item"><td>1</td><td>Coates, Landon</td><td>40</td><td>3</td><td>0</td><td>18</td><td>7</td><td>11</td></tr>
+            <tr class="item"><td>2</td><td>Coates, Spencer</td><td>33</td><td>2</td><td>1</td><td>13</td><td>4</td><td>9</td></tr>
+            <tr class="item"><td>3</td><td>Guenther, Gabby</td><td>33</td><td>1</td><td>0</td><td>4</td><td>1</td><td>3</td></tr>
+            <tr class="item"><td>4</td><td>Blumentritt, Colin</td><td>30</td><td>1</td><td>0</td><td>6</td><td>0</td><td>6</td></tr>
+            <tr class="item"><td>5</td><td>Son, Euji</td><td>29</td><td>2</td><td>2</td><td>15</td><td>17</td><td>-2</td></tr>
+            <tr class="item"><td>6</td><td>Chen, Chris</td><td>29</td><td>1</td><td>0</td><td>6</td><td>3</td><td>3</td></tr>
+            <tr class="item"><td>7</td><td>Blumentritt, Luke</td><td>27</td><td>1</td><td>4</td><td>17</td><td>27</td><td>-10</td></tr>
+            <tr class="item"><td>8</td><td>Ashfeld, Jaxson</td><td>26</td><td>3</td><td>0</td><td>18</td><td>10</td><td>8</td></tr>
+            <tr class="item"><td>9</td><td>Lippert, Quinn</td><td>26</td><td>2</td><td>3</td><td>16</td><td>23</td><td>-7</td></tr>
+            <tr class="item"><td>10</td><td>Kennedy, Cormac</td><td>24</td><td>2</td><td>0</td><td>12</td><td>4</td><td>8</td></tr>
+            <tr class="item"><td>11</td><td>Westberry, Will</td><td>24</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr class="item"><td>12</td><td>Zhao, Isabelle</td><td>22</td><td>4</td><td>0</td><td>24</td><td>9</td><td>15</td></tr>
+            <tr class="item"><td>13</td><td>Yu, Ella</td><td>22</td><td>3</td><td>0</td><td>18</td><td>2</td><td>16</td></tr>
+            <tr class="item"><td>14</td><td>Wu, Olivia</td><td>22</td><td>1</td><td>1</td><td>10</td><td>7</td><td>3</td></tr>
+            <tr class="item"><td>15</td><td>Westberry, Jake</td><td>19</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr class="item"><td>16</td><td>Jin, Johan</td><td>18</td><td>2</td><td>1</td><td>14</td><td>7</td><td>7</td></tr>
+            <tr class="item"><td>17</td><td>Hu, Aileen</td><td>18</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr class="item"><td>18</td><td>Striegel, Harrison</td><td>18</td><td>0</td><td>1</td><td>4</td><td>6</td><td>-2</td></tr>
+            <tr class="item"><td>19</td><td>Brant, Lanie</td><td>17</td><td>1</td><td>2</td><td>7</td><td>16</td><td>-9</td></tr>
+            <tr class="item"><td>20</td><td>Ashfeld, Josie</td><td>16</td><td>2</td><td>2</td><td>14</td><td>13</td><td>1</td></tr>
+            <tr class="item"><td>21</td><td>Brooke, Ivette</td><td>16</td><td>1</td><td>2</td><td>9</td><td>12</td><td>-3</td></tr>
+            <tr class="item"><td>22</td><td>Yergler, Libby</td><td>16</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr class="item"><td>23</td><td>Wang, Xiaohe</td><td>15</td><td>2</td><td>2</td><td>15</td><td>14</td><td>1</td></tr>
+            <tr class="item"><td>24</td><td>Zhang, Aaron</td><td>14</td><td>2</td><td>1</td><td>13</td><td>14</td><td>-1</td></tr>
+            <tr class="item"><td>25</td><td>Ferreira, Noe</td><td>14</td><td>1</td><td>0</td><td>6</td><td>2</td><td>4</td></tr>
+            <tr class="item"><td>26</td><td>Lippert, Landen</td><td>12</td><td>1</td><td>0</td><td>6</td><td>3</td><td>3</td></tr>
+            <tr class="item"><td>27</td><td>Marazita, Ella</td><td>12</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr class="item"><td>28</td><td>Wickey, Teagan</td><td>11</td><td>1</td><td>0</td><td>4</td><td>0</td><td>4</td></tr>
+            <tr class="item"><td>29</td><td>Michaels, Ella</td><td>10</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr class="item"><td>30</td><td>Kirleis, Kenny</td><td>10</td><td>0</td><td>4</td><td>8</td><td>22</td><td>-14</td></tr>
+            <tr class="item"><td>31</td><td>Gao, Norah</td><td>9</td><td>1</td><td>1</td><td>10</td><td>7</td><td>3</td></tr>
+            <tr class="item"><td>32</td><td>Haberland, Hudson</td><td>9</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr class="item"><td>33</td><td>Wei, Emma</td><td>8</td><td>2</td><td>1</td><td>14</td><td>10</td><td>4</td></tr>
+            <tr class="item"><td>34</td><td>Zhao, Annabelle</td><td>8</td><td>1</td><td>2</td><td>9</td><td>13</td><td>-4</td></tr>
+            <tr class="item"><td>35</td><td>Brady, Ben</td><td>8</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr class="item"><td>36</td><td>Ewing, Maya</td><td>6</td><td>0</td><td>1</td><td>0</td><td>6</td><td>-6</td></tr>
+            <tr class="item"><td>37</td><td>Palacios, Andrea</td><td>5</td><td>0</td><td>3</td><td>4</td><td>18</td><td>-14</td></tr>
+            <tr class="item"><td>38</td><td>Narisetty, Vihaan</td><td>4</td><td>1</td><td>0</td><td>6</td><td>0</td><td>6</td></tr>
+            <tr class="item"><td>39</td><td>So, Austin</td><td>4</td><td>1</td><td>0</td><td>6</td><td>4</td><td>2</td></tr>
+            <tr class="item"><td>40</td><td>G, Blake</td><td>4</td><td>1</td><td>1</td><td>7</td><td>6</td><td>1</td></tr>
+            <tr class="item"><td>41</td><td>Zhang, Julie</td><td>4</td><td>1</td><td>1</td><td>7</td><td>8</td><td>-1</td></tr>
+            <tr class="item"><td>42</td><td>Picking, Ben</td><td>4</td><td>1</td><td>2</td><td>11</td><td>14</td><td>-3</td></tr>
+            <tr class="item"><td>43</td><td>Betz, Jack</td><td>4</td><td>1</td><td>2</td><td>8</td><td>17</td><td>-9</td></tr>
+            <tr class="item"><td>44</td><td>Davis, Luke</td><td>4</td><td>1</td><td>2</td><td>6</td><td>12</td><td>-6</td></tr>
+            <tr class="item"><td>45</td><td>Zhao, Kaiyi</td><td>4</td><td>0</td><td>1</td><td>3</td><td>6</td><td>-3</td></tr>
+            <tr class="item"><td>46</td><td>Washington, Tristan</td><td>0</td><td>0</td><td>1</td><td>0</td><td>6</td><td>-6</td></tr>
+            <tr class="item"><td>47</td><td>Serge, Genevieve</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr class="item"><td>48</td><td>Gerber, Meira</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr class="item"><td>49</td><td>Eskander, Anna</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr class="item"><td>50</td><td>Chung, Nathan</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr class="item"><td>51</td><td>Chung, Charlotte</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr class="item"><td>52</td><td>An, Misha</td><td>4</td><td>1</td><td>0</td><td>6</td><td>0</td><td>6</td></tr>
+            <tr class="item"><td>53</td><td>Robert</td><td>0</td><td>0</td><td>1</td><td>4</td><td>6</td><td>-2</td></tr>
+            <tr class="item"><td>54</td><td>Shim, Noah</td><td>0</td><td>0</td><td>1</td><td>4</td><td>6</td><td>-2</td></tr>
+            <tr class="item"><td>55</td><td>Lin, Yuxuan</td><td>0</td><td>0</td><td>1</td><td>3</td><td>6</td><td>-3</td></tr>
+            <tr class="item"><td>56</td><td>Samardzich, Luke</td><td>0</td><td>0</td><td>1</td><td>1</td><td>6</td><td>-5</td></tr>
+            <tr class="item"><td>57</td><td>Zhang, Jeffery</td><td>0</td><td>0</td><td>1</td><td>0</td><td>6</td><td>-6</td></tr>
+            <tr class="item"><td>58</td><td>Gerber, Nina</td><td>0</td><td>0</td><td>2</td><td>6</td><td>12</td><td>-6</td></tr>
+            <tr class="item"><td>59</td><td>Gerber, Meira</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr class="item"><td>60</td><td>Eskander, Anna</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr class="item"><td>61</td><td>Serge, Genevieve</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr class="item"><td>62</td><td>Washington, Tristan</td><td>0</td><td>0</td><td>1</td><td>0</td><td>6</td><td>-6</td></tr>
         
 
             </tbody>
         </table>
-    </main><br><br><br><br>
+    </main>
+    
+    <br><br><br><br>
+    
     <footer>
         <p>© 2024 Lakeland Ranking</p>
+    
     </footer>
 </body>
 
@@ -156,7 +190,33 @@
         document.getElementById("bestWinRatePlayer").innerText = bestWinRatePlayer;
         document.getElementById("mostPointsPlayer").innerText = mostPointsPlayer;
     });
+
+
+    //barra de busca
+    function search() {
+        var input = document.getElementById('search-bar');
+        var filter = input.value.toUpperCase();
+        var items = document.querySelectorAll('.item');
+
+        items.forEach(function(item) {
+            item.classList.remove('highlight');
+        });
+
+
+        for (var i = 0; i < items.length; i++) {
+            var item = items[i];
+            if (filter) {
+                items.forEach(function(item) {
+                    if (item.textContent.toUpperCase().indexOf(filter) > -1) {
+                        item.classList.add('highlight');
+                    }
+                });
+            }
+    
+        }
+    }
 </script>
 
 </html>
+
 
