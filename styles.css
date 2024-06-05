@@ -197,5 +197,9 @@ footer {
     body {
         padding-bottom: 80px; /* Increase space at the bottom on small screens */
     }
+    
+    header {
+        width: 100%;
+    }
 }
 
