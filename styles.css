@@ -1,5 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0 0 60px; /* Bottom padding to ensure content doesn't overlap with the fixed footer */
     background-color: #ececec;
@@ -16,6 +24,43 @@ header {
     box-shadow: 0 4px 8px rgba(99, 94, 94, 0.12); /* Enhanced shadow for depth */
     border-bottom: 4px solid #ececec;
     width: 100%;
+}
+
+body, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menuContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+.menu ul {
+    display: flex;
+    padding: 0;
+    margin-top: 25px;
+}
+
+.menu li {
+    margin: 0 10px;
+    padding: 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.5s ease;
+}
+
+.menu a:hover{
+    color: #00ffbf;
+    
+    
 }
 
 .special-awards {
@@ -46,6 +91,13 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
 
 .search {
     display: flex;
@@ -100,8 +152,9 @@ input:focus + .search_button {
 }
 
 .highlight {
-    background-color: #0b5980;
+    color: #5fff94;
     font-weight: bold;
+    background-color: #0056b3;
 }
 
 
@@ -172,7 +225,10 @@ td:hover {
 }
 
 
-
+#upDown {
+    height: 30px;
+    vertical-align: middle;
+}
 
 
 footer {
@@ -184,22 +240,5 @@ footer {
     width: 100%;
     bottom: 0;
     border-top: 5px solid #ececec; /* Thicker border for a stronger visual base */
-}
-
-@media screen and (max-width: 600px) {
-    table, th, td {
-        width: 100%;
-        padding: 12px 8px; /* Reduced padding for smaller screens */
-    }
-    header, footer {
-        padding: 15px 10px;
-    }
-    body {
-        padding-bottom: 80px; /* Increase space at the bottom on small screens */
-    }
-    
-    header {
-        width: 100%;
-    }
 }
 
