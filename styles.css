@@ -1,244 +1,561 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+/* ============================= */
+/* HEADER - Estilos do Cabeçalho */
+/* ============================= */
 * {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
     margin: 0;
-    padding: 0 0 60px; /* Bottom padding to ensure content doesn't overlap with the fixed footer */
-    background-color: #ececec;
-    color: #333;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased; /* Smoother font rendering */
+    padding: 0;
 }
 
 header {
-    background: linear-gradient(to right, #019e6a, #003455);
-    color: #fff;
-    padding: 15px 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(99, 94, 94, 0.12); /* Enhanced shadow for depth */
-    border-bottom: 4px solid #ececec;
-    width: 100%;
-}
-
-body, ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    background: linear-gradient(to right, #019e6a, #003455); /* Fundo com gradiente */
+    color: #fff; /* Texto branco */
+    padding: 15px 20px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o conteúdo */
+    box-shadow: 0 4px 8px rgba(99, 94, 94, 0.12); /* Sombra para profundidade */
+    border-bottom: 4px solid #ececec; /* Borda inferior para contraste */
+    width: 100%; /* Ocupa toda a largura */
 }
 
 .menuContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10vh;
+    display: flex; /* Alinha os itens do cabeçalho lado a lado */
+    justify-content: space-between; /* Espaça os itens */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 0 20px; /* Espaçamento lateral */
 }
 
-.menu ul {
-    display: flex;
-    padding: 0;
-    margin-top: 25px;
+h1 {
+    margin: 0; /* Remove margens do título */
+    font-size: 2rem; /* Tamanho do título */
+    text-transform: uppercase; /* Texto em maiúsculas */
+    letter-spacing: 1.5px; /* Espaçamento entre as letras */
+    color: white; /* Cor do texto */
 }
 
-.menu li {
-    margin: 0 10px;
-    padding: 10px;
+/* Menu principal */
+.menu {
+    display: none; /* Esconde o menu por padrão */
 }
 
 .menu a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.2rem;
-    transition: color 0.5s ease;
+    color: white; /* Cor dos links */
+    text-decoration: none; /* Remove o sublinhado */
+    font-size: 1.2rem; /* Tamanho da fonte */
+    padding: 10px; /* Espaçamento interno */
+    display: block; /* Cada link ocupa a linha inteira */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Suaviza mudanças */
 }
 
-.menu a:hover{
-    color: #00ffbf;
-    
-    
+.menu a:hover {
+    background-color: #00ffbf; /* Fundo no hover */
+    color: #003455; /* Cor do texto no hover */
 }
 
+/* Menu toggle - Ícone do hambúrguer */
+.menu-toggle {
+    display: none; /* Esconde o ícone por padrão */
+    font-size: 1.8rem; /* Tamanho do ícone */
+    color: white; /* Cor do ícone */
+    cursor: pointer; /* Muda o cursor para indicar interatividade */
+    transition: transform 0.3s ease; /* Suaviza o zoom */
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1); /* Efeito de zoom no hover */
+}
+
+/* ================================ */
+/* RESPONSIVIDADE PARA O HEADER     */
+/* ================================ */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Mostra o ícone do menu em telas menores */
+    }
+
+    .menu {
+        display: none; /* Escondido por padrão */
+        flex-direction: column;
+        background-color: #003455;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        z-index: 100;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .menu.active {
+        display: flex; /* Exibe o menu */
+    }
+    
+    .menu ul {
+        flex-direction: column; /* Links empilhados verticalmente */
+        align-items: center; /* Centraliza os itens */
+        padding: 0;
+    }
+
+    .menu li {
+        width: 100%; /* Links ocupam toda a largura */
+        text-align: center; /* Centraliza o texto */
+        padding: 15px 0; /* Espaçamento entre os itens */
+    }
+
+    .menu a {
+        font-size: 1rem; /* Reduz o tamanho da fonte */
+    }
+}
+
+
+/* ========================================= */
+/* SPECIAL AWARDS - Bloco de prêmios destaque */
+/* ========================================= */
 .special-awards {
-    display: flex;
-    justify-content: space-around;
+    display: flex; /* Exibe os prêmios lado a lado */
+    justify-content: space-around; /* Espaça os elementos uniformemente */
     gap: 20px; /* Espaçamento entre os blocos */
-    padding: 20px;
-    margin: 20px auto 40px; /* Margem aumentada para separar da tabela */
-    background-color: transparent;
-    max-width: 90%;
+    padding: 20px; /* Espaçamento interno */
+    margin: 20px auto 40px; /* Margem superior e inferior para separar da tabela */
+    max-width: 90%; /* Limita a largura máxima */
 }
 
 .special-awards .award {
-    flex: 1; /* Faz com que todos os elementos award ocupem a mesma quantidade de espaço */
-    text-align: center;
-    padding: 20px;
+    flex: 1; /* Cada prêmio ocupa a mesma proporção de espaço */
+    text-align: center; /* Centraliza o texto */
+    padding: 20px; /* Espaçamento interno */
     border-radius: 12px; /* Cantos arredondados */
-    color: #fff;
-    background: #036a77; /* Cor uniforme para todos os prêmios */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Sombra mais pronunciada */
-    margin: 0 10px; /* Espaçamento lateral */
+    color: #fff; /* Cor do texto */
+    background: #036a77; /* Cor de fundo para os prêmios */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra para destaque */
+    margin: 0 10px; /* Margem lateral entre os prêmios */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza efeitos */
 }
 
-
-h1 {
-    margin: 0;
-    font-size: 28px; /* Slightly larger for emphasis */
-    text-transform: uppercase;
-    letter-spacing: 2px;
+.special-awards .award:hover {
+    transform: scale(1.05); /* Aumenta levemente o tamanho ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais forte no hover */
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
+/* ================================================= */
+/* RESPONSIVIDADE PARA A SEÇÃO SPECIAL AWARDS        */
+/* ================================================= */
+@media (max-width: 768px) {
+    .special-awards {
+        flex-direction: column; /* Empilha os prêmios em telas menores */
+        align-items: center; /* Centraliza os itens */
+        gap: 10px; /* Reduz o espaçamento entre os blocos */
+    }
 
+    .special-awards .award {
+        margin: 10px 0; /* Margem superior e inferior ajustada */
+        padding: 15px; /* Padding menor para melhor ajuste */
+    }
+}
 
+/* =============================== */
+/* SEARCH - Barra de busca         */
+/* =============================== */
 .search {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-right: 5%;
-    line-height: 28px;
-    text-align: center;
+    display: flex; /* Exibe input e botão lado a lado */
+    justify-content: flex-end; /* Alinha à direita */
+    align-items: center; /* Centraliza verticalmente */
+    margin-right: 5%; /* Espaçamento à direita */
+    line-height: 28px; /* Altura da linha */
+    text-align: center; /* Centraliza o texto */
+    gap: 10px; /* Espaçamento entre o input e o botão */
 }
 
-input {
-    font-family: inherit;
-    font-size: inherit;
-    background-color: #f4f2f2;
-    border: none;
-    color: #646464;
-    padding: 0.7rem 1rem;
-    border-radius: 30px;
-    width: 12rem;
-    transition: all ease-in-out .5s;
-    margin-right: -2rem;
+.search input {
+    font-family: inherit; /* Herda a fonte global */
+    font-size: 1rem; /* Tamanho do texto */
+    background-color: #f4f2f2; /* Cor de fundo */
+    border: none; /* Remove bordas padrão */
+    color: #646464; /* Cor do texto */
+    padding: 0.7rem 1rem; /* Espaçamento interno */
+    border-radius: 30px; /* Bordas arredondadas */
+    width: 12rem; /* Largura padrão */
+    transition: all ease-in-out 0.5s; /* Transição suave para efeitos */
 }
 
-input:focus, input:hover {
-    box-shadow: 0 0 1em #00000013;
-}
-
-input:focus {
-    outline: none;
-    background-color: #f0eeee;
-}
-
-input:focus + .search_button {
-    background-color: #f4f2f2;
+.search input:focus, 
+.search input:hover {
+    box-shadow: 0 0 1em #00000013; /* Sombra no hover ou foco */
+    background-color: #f0eeee; /* Fundo levemente mais claro */
 }
 
 .search_button {
-    border: none;
-    background-color: #f4f2f2;
-    margin-top: .1em;
+    border: none; /* Remove borda */
+    background-color: #f4f2f2; /* Fundo do botão */
+    padding: 0.7rem 1rem; /* Espaçamento interno */
+    border-radius: 30px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor pointer ao passar o mouse */
+    transition: background-color 0.3s ease; /* Suaviza as mudanças de cor */
 }
 
 .search_button:hover {
-    cursor: pointer;
+    background-color: #00ffbf; /* Fundo verde no hover */
+    color: #003455; /* Texto azul escuro no hover */
 }
 
+/* ========================================= */
+/* RESPONSIVIDADE PARA A SEÇÃO SEARCH        */
+/* ========================================= */
+@media (max-width: 768px) {
+    .search {
+        justify-content: center; /* Centraliza a barra de busca */
+        margin-right: 0; /* Remove margem lateral */
+    }
+
+    .search input {
+        width: 100%; /* Input ocupa toda a largura */
+        max-width: 300px; /* Limita o tamanho máximo */
+    }
+
+    .search_button {
+        padding: 0.5rem 1rem; /* Padding ajustado para dispositivos menores */
+    }
+}
+
+/* ============================== */
+/* GLOBAL STYLES (h1, input, etc.) */
+/* ============================== */
+
+/* ======================== */
+/* TÍTULOS - Geral (h1)     */
+/* ======================== */
+h1 {
+    margin: 0;
+    font-size: 2rem; /* Tamanho padrão */
+    text-transform: uppercase; /* Texto em maiúsculas */
+    letter-spacing: 2px; /* Espaçamento entre as letras */
+    color: white; /* Cor do texto */
+}
+
+/* Responsividade para títulos */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem; /* Reduz o tamanho do título em dispositivos menores */
+    }
+}
+
+/* ===================================== */
+/* INPUT - Campos de entrada de texto    */
+/* ===================================== */
+input {
+    font-family: inherit; /* Herda a fonte global */
+    font-size: 1rem; /* Define um tamanho base, mais consistente */
+    background-color: #f4f2f2; /* Cor de fundo */
+    border: none; /* Remove bordas padrão */
+    color: #646464; /* Cor do texto */
+    padding: 0.7rem 1rem; /* Espaçamento interno */
+    border-radius: 30px; /* Bordas arredondadas */
+    width: 100%; /* Adapta a largura automaticamente */
+    max-width: 300px; /* Limita o tamanho máximo */
+    transition: box-shadow 0.3s ease, background-color 0.3s ease; /* Suaviza as mudanças */
+}
+
+input:focus,
+input:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra no hover e foco */
+    background-color: #fff; /* Fundo levemente mais claro */
+    outline: none; /* Remove o outline padrão */
+}
+
+/* ========================================= */
+/* BOTÃO DE BUSCA - Geral (.search_button)   */
+/* ========================================= */
+.search_button {
+    border: none; /* Remove bordas padrão */
+    background-color: #00ffbf; /* Fundo padrão */
+    color: #003455; /* Contraste no texto */
+    padding: 0.7rem 1rem; /* Padding consistente */
+    border-radius: 30px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor pointer para indicar interatividade */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Suaviza as mudanças de cor */
+}
+
+.search_button:hover {
+    background-color: #003455; /* Cor invertida no hover */
+    color: #00ffbf; /* Texto com fundo claro */
+}
+
+/* ============================ */
+/* ÍCONES - Geral (.icon)       */
+/* ============================ */
 .icon {
-    height: 1.3em;
-
-    fill: #030e6d;
-
+    height: 1.3em; /* Altura padrão do ícone */
+    fill: #030e6d; /* Cor inicial do ícone */
+    transition: transform 0.3s ease; /* Transição suave para o hover */
 }
 
+.icon:hover {
+    transform: scale(1.2); /* Aumenta o tamanho no hover */
+    fill: #00ffbf; /* Muda a cor para um tom verde */
+}
+
+/* ================================= */
+/* DESTAQUE - Geral (.highlight)     */
+/* ================================= */
 .highlight {
-    color: #5fff94;
-    font-weight: bold;
-    background-color: #0056b3;
+    color: #fff; /* Texto branco para maior contraste */
+    font-weight: bold; /* Texto destacado */
+    background-color: #0056b3; /* Fundo azul sólido */
+    padding: 0.2rem 0.4rem; /* Espaçamento interno */
+    border-radius: 5px; /* Cantos arredondados */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave */
 }
 
+/* ========================================= */
+/* RESPONSIVIDADE PARA INPUT E BOTÃO DE BUSCA */
+/* ========================================= */
+@media (max-width: 768px) {
+    input {
+        width: 100%; /* Campo de texto ocupa toda a largura disponível */
+        margin-right: 0; /* Remove margem desnecessária */
+        padding: 0.6rem; /* Padding reduzido para telas menores */
+    }
 
+    .search_button {
+        width: 100%; /* Botão ocupa toda a largura */
+        text-align: center; /* Centraliza o texto */
+        margin-top: 0.5rem; /* Espaçamento entre o botão e o input */
+    }
 
+    .icon {
+        height: 1.5em; /* Aumenta o tamanho do ícone em dispositivos menores */
+    }
+}
+
+/* ================================== */
+/* TABELA - Estilos principais        */
+/* ================================== */
 table {
-    width: 90%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    background-color: #fff;
-    border-radius: 12px; /* Canto arredondado mais suave */
-    overflow: hidden;
-    margin-bottom: 40px;
-    border: 1px solid #ddd; /* Adiciona uma borda sutil */
+    width: 90%; /* Tabela ocupa 90% da largura */
+    margin: 20px auto; /* Centraliza a tabela */
+    border-collapse: collapse; /* Remove espaçamento entre as bordas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sombra para profundidade */
+    background-color: #fff; /* Fundo branco */
+    border-radius: 12px; /* Cantos arredondados */
+    overflow: hidden; /* Garante que o conteúdo se ajuste aos cantos arredondados */
+    margin-bottom: 40px; /* Espaçamento inferior */
+    border: 1px solid #ddd; /* Borda sutil ao redor */
 }
 
-th, td {
-    padding: 15px 20px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-}
-
+/* ================================== */
+/* CABEÇALHOS DA TABELA (th)          */
+/* ================================== */
 th {
-    background-color: #f1f4f9; /* Cor de fundo mais clara para cabeçalhos */
-    color: #333;
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    font-weight: 600; /* Texto mais forte nos cabeçalhos */
+    background-color: #f1f4f9; /* Fundo claro para os cabeçalhos */
+    color: #333; /* Cor do texto */
+    font-size: 16px; /* Tamanho do texto */
+    text-transform: uppercase; /* Texto em maiúsculas */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+    padding: 15px 20px; /* Espaçamento interno */
+    border-bottom: 1px solid #ddd; /* Linha de separação */
+    font-weight: 600; /* Texto mais forte */
 }
 
+/* ================================== */
+/* LINHAS E CÉLULAS DA TABELA         */
+/* ================================== */
 tbody tr {
-    border-radius: 12px;
+    border-radius: 12px; /* Linhas com cantos arredondados */
 }
 
 tbody tr:nth-child(odd) {
-    background-color: #e6f7ff;
+    background-color: #e6f7ff; /* Fundo azul claro para linhas ímpares */
 }
 
 tbody tr:nth-child(even) {
-    background-color: #f0fbff;
-}
-
-tbody tr:hover {
-    background-color: #d0efff;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1); /* Sombra adicional ao passar o mouse */
-    transform: scale(1.01); /* Leve aumento de escala para dar efeito de elevação */
-}
-
-tbody tr:hover td:nth-child(2) {
-    transform: scale(1.1);
-    font-weight: bold;
-    color: #0056b3; /* Cor do texto alterada para maior contraste */
+    background-color: #f0fbff; /* Fundo azul ainda mais claro para linhas pares */
 }
 
 td {
-    font-size: 14px;
-    color: #555;
-    transition: transform 0.3s ease, color 0.3s ease;
-    background-color: inherit; /* Mantém a cor de fundo herdada */
+    padding: 15px 20px; /* Espaçamento interno */
+    text-align: left; /* Alinhamento do texto à esquerda */
+    font-size: 14px; /* Tamanho do texto */
+    color: #555; /* Cor do texto */
+    transition: transform 0.3s ease, color 0.3s ease; /* Suaviza transformações */
+    background-color: inherit; /* Mantém a cor de fundo herdada da linha */
 }
 
 td:hover {
-    color: #000; /* Cor do texto mais escura ao passar o mouse */
+    color: #000; /* Texto mais escuro ao passar o mouse */
 }
 
+/* ================================== */
+/* INTERATIVIDADE E HOVER             */
+/* ================================== */
+tbody tr:hover {
+    background-color: #d0efff; /* Fundo mais destacado no hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+    transform: scale(1.01); /* Aumenta levemente o tamanho */
+}
 
+tbody tr:hover td:nth-child(2) {
+    transform: scale(1.1); /* Destaque maior na segunda coluna */
+    font-weight: bold; /* Texto mais forte */
+    color: #0056b3; /* Texto em azul escuro */
+}
+
+/* ================================== */
+/* ELEMENTOS ESPECÍFICOS              */
+/* ================================== */
 #upDown {
-    height: 30px;
-    vertical-align: middle;
+    height: 30px; /* Altura fixa para o ícone */
+    vertical-align: middle; /* Alinha o ícone verticalmente ao texto */
+}
+
+/* ================================== */
+/* RESPONSIVIDADE PARA A TABELA       */
+/* ================================== */
+@media (max-width: 768px) {
+    table {
+        width: 100%; /* Tabela ocupa toda a largura */
+        font-size: 12px; /* Texto menor para caber melhor */
+        margin: 10px auto; /* Reduz margem */
+    }
+
+    th, td {
+        padding: 10px; /* Reduz espaçamento interno */
+    }
+
+    tbody tr:hover {
+        transform: none; /* Remove o aumento no hover em dispositivos menores */
+    }
+}
+
+@media (max-width: 480px) {
+    table {
+        font-size: 10px; /* Texto ainda menor para telas muito pequenas */
+    }
+
+    th, td {
+        padding: 8px; /* Padding mais compacto */
+    }
 }
 
 
+/* =========================== */
+/* FOOTER - Rodapé do site     */
+/* =========================== */
 footer {
-    text-align: center;
-    padding: 12px 0;
-    background: linear-gradient(to right, #019e6a, #003455);
-    color: white;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    border-top: 5px solid #ececec; /* Thicker border for a stronger visual base */
+    text-align: center; /* Centraliza o texto */
+    padding: 12px 0; /* Espaçamento interno */
+    background: linear-gradient(to right, #019e6a, #003455); /* Fundo com gradiente */
+    color: white; /* Texto branco */
+    position: fixed; /* Mantém o footer fixo no final da tela */
+    width: 100%; /* Largura completa */
+    bottom: 0; /* Posicionado na parte inferior */
+    border-top: 5px solid #ececec; /* Borda superior para contraste */
 }
 
+/* =========================== */
+/* RESPONSIVIDADE GERAL        */
+/* =========================== */
+
+/* Dispositivos médios (máx: 1024px) */
+@media (max-width: 1024px) {
+    .menu ul {
+        flex-direction: column; /* Empilha os itens do menu */
+        align-items: center; /* Centraliza os links */
+        margin-top: 10px; /* Espaçamento superior */
+    }
+
+    .menu li {
+        margin: 10px 0; /* Espaçamento entre os itens do menu */
+    }
+
+    .special-awards {
+        flex-direction: column; /* Prêmios empilhados verticalmente */
+        align-items: center; /* Centraliza os prêmios */
+        gap: 15px; /* Reduz espaçamento entre os prêmios */
+    }
+
+    .search {
+        justify-content: center; /* Centraliza a barra de busca */
+        margin-right: 0; /* Remove margem à direita */
+    }
+}
+
+/* Dispositivos pequenos (máx: 768px) */
+@media (max-width: 768px) {
+    table {
+        display: block; /* Permite que a tabela seja rolável horizontalmente */
+        overflow-x: auto; /* Adiciona barra de rolagem horizontal */
+        white-space: nowrap; /* Impede a quebra de linhas */
+        width: 100%; /* Usa toda a largura */
+        border: 0; /* Remove a borda externa */
+    }
+
+    thead {
+        display: table; /* Mantém os cabeçalhos visíveis */
+        width: 100%; /* Garante alinhamento com o corpo da tabela */
+    }
+
+    tbody {
+        display: table; /* Garante que as linhas fiquem visíveis */
+        width: 100%;
+    }
+
+    th, td {
+        text-align: left; /* Mantém alinhamento claro */
+        padding: 10px 5px; /* Reduz o padding para economizar espaço */
+        font-size: 12px; /* Reduz o tamanho do texto */
+    }
+
+    tbody tr {
+        display: table-row; /* Organiza corretamente as linhas */
+    }
+
+    .award {
+        padding: 15px; /* Padding reduzido para telas menores */
+        font-size: 14px; /* Tamanho menor do texto */
+    }
+
+    .search input {
+        width: 100%; /* Input ocupa toda a largura */
+        margin: 0 auto; /* Centraliza */
+        padding: 0.5rem; /* Padding reduzido */
+    }
+
+    .search_button {
+        margin-left: 5px; /* Pequena margem à esquerda do botão */
+    }
+
+    footer {
+        font-size: 14px; /* Texto menor no rodapé */
+    }
+}
+
+/* Dispositivos muito pequenos (máx: 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 22px; /* Reduz tamanho do título */
+    }
+
+    header {
+        font-size: 14px; /* Ajusta tamanho do texto no cabeçalho */
+        padding: 8px; /* Padding reduzido */
+    }
+
+    .menu a {
+        font-size: 1rem; /* Reduz tamanho da fonte dos links */
+    }
+
+    table {
+        font-size: 9px; /* Texto menor para caber melhor */
+    }
+
+    th, td {
+        padding: 5px; /* Reduz padding para economia de espaço */
+    }
+
+    .special-awards {
+        padding: 5px; /* Padding reduzido */
+        gap: 5px; /* Espaçamento menor entre os prêmios */
+    }
+
+    footer {
+        font-size: 12px; /* Texto menor no rodapé */
+        padding: 6px 0; /* Padding reduzido no rodapé */
+    }
+}
